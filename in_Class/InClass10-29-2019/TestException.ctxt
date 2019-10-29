@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=TestException
+comment1.params=
+comment1.target=TestException()
+comment2.params=message
+comment2.target=TestException(java.lang.String)
+comment3.params=
+comment3.target=void\ testMethod()
+numComments=4

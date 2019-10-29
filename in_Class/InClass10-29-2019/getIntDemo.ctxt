@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=getIntDemo
+comment1.params=keyboard
+comment1.target=int\ getInt(java.util.Scanner)
+comment1.text=\r\n\ \ \ \ Precondition\:\ keyboard\ is\ an\ object\ of\ the\ class\ Scanner\ that\ has\r\n\ \ \ \ been\ set\ up\ for\ keyboard\ input\ (as\ we\ have\ been\ doing\ right\ along).\r\n\ \ \ \ Returns\:\ An\ int\ value\ entered\ at\ the\ keyboard.\r\n\ \ \ \ If\ the\ user\ enters\ an\ incorrectly\ formed\ input\ she\ or\ he\ is\r\n\ \ \ \ prompted\ to\ reenter\ the\ value,\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+numComments=3

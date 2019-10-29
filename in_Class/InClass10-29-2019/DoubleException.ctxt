@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=DoubleException
+comment1.params=
+comment1.target=DoubleException()
+comment2.params=message
+comment2.target=DoubleException(java.lang.String)
+comment3.params=number
+comment3.target=DoubleException(double)
+comment4.params=
+comment4.target=double\ getNumber()
+numComments=5
