@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ShowInterest
+comment0.text=\r\n\ Program\ to\ show\ interest\ on\ a\ sample\ account\ balance.\r\n\ Author\:\ Jane\ Q.\ Programmer.\r\n\ E-mail\ Address\:\ janeq@somemachine.etc.etc.\r\n\ Last\ Changed\:\ September\ 21,\ 2004.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2
