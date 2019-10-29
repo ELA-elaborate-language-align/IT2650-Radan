@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=BeerSong
+comment1.params=number
+comment1.target=BeerSong(int)
+comment2.params=i
+comment2.target=java.lang.String\ getSingular(int)
+comment3.params=i
+comment3.target=java.lang.String\ getMultiplesOfTen(int)
+comment4.params=i
+comment4.target=java.lang.String\ getTeens(int)
+comment5.params=i
+comment5.target=java.lang.String\ getNumberInEnglish(int)
+comment6.params=
+comment6.target=java.lang.String\ printSong()
+numComments=7
