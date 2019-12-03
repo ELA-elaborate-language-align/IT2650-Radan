@@ -1,0 +1,1 @@
+Write a program that takes its input from a binary file of numbers of type double and outputs the average of the numbers in the file to the screen. The file contains nothing but numbers of type double written to the file with writeDouble.
