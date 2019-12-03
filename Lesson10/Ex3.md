@@ -1,0 +1,1 @@
+Write a program that takes its input from a text file of strings representing numbers of type double and outputs the average of the numbers in the file to the screen. The file contains nothing but strings representing numbers of type double, one per line.
