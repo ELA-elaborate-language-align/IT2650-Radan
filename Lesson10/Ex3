@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+public class Typeconversion 
+{
+	public static void main(String args[])
+	{
+		Scanner input = null;
+		try
+		{
+			input = new Scanner(new FileInputStream("input.txt"));
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("file was not found.");
+		}
+		double sum = 0;
+		int number = 0;
+		while(input.hasNextDouble())
+		{
+			sum += input.nextDouble();
+			number++;	
+		}
+		System.out.println("The Average of numbers: " + sum /number);
+		input.close();
+	}
+}
