@@ -1,0 +1,1 @@
+Write a program that will search a text file of strings representing numbers of type int and will write the largest and the smallest numbers to the screen. The file contains nothing but strings representing numbers of type int , one per line.
