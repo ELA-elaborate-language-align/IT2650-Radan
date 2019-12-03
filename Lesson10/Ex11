@@ -1,0 +1,224 @@
+import java.io.*;
+import java.util.*;
+
+public class PersonDemo 
+{
+	public static void main(String args[])
+	{
+		Scanner scan = new Scanner(System.in);
+		int ch = 0;
+		System.out.println("Enter current date: ");
+		Date currentDate = new Date();
+		currentDate.readInput();
+		while(ch != -1)
+		{
+			System.out.println("1) Add Record");
+			System.out.println("2) Delete Record");
+			System.out.println("3) Display Record");
+			System.out.println("4) Obtain Record within age");
+			System.out.println("-1) Exit");
+			System.out.print("Enter choice: ");
+			ch = scan.nextInt();
+			scan.nextLine();
+			ObjectInputStream inputStream = null;
+			ObjectOutputStream outputStream = null;
+			switch(ch)
+			{
+			case 1: 
+				try 
+				{
+					try
+					{
+outputStream =new ObjectOutputStream(new FileOutputStream("peopleTemp.dat"));
+inputStream = new ObjectInputStream(new FileInputStream("people.dat"));
+while(true)
+{
+Person current =(Person)inputStream.readObject();
+outputStream.writeObject(current);
+}
+}
+			catch(IOException e)
+													{
+														
+													}
+					try
+					{
+		outputStream = new ObjectOutputStream(new FileOutputStream("people.dat"));
+
+		inputStream = new ObjectInputStream(new FileInputStream("peopleTemp.dat"));
+						while(true)
+						{
+Person current =(Person)inputStream.readObject();									
+outputStream.writeObject(current);
+						}
+					}
+					catch(IOException e)
+					{
+						
+					}
+					System.out.print(
+							"Enter name of person:");
+				String name = scan.nextLine();
+				System.out.println("Enter birth date:");
+				Date birthDate = new Date();
+				birthDate.readInput();
+				Date deathDate = new Date();
+				System.out.println("Is the person still alive? (y/n)");
+				String answer = scan.nextLine();
+				if(answer.equals("y"))
+					deathDate = null;
+				else
+				{
+						System.out.println("Enter death date :");
+						deathDate.readInput();
+				}
+		outputStream.writeObject(new Person(name, birthDate, deathDate));
+																									}
+				System.out.println();
+																									break;
+	case 2: //Deleting a person
+				try
+				{
+					System.out.println("Enter the name of person to be removed:");
+					String nameToRemove = scan.nextLine();
+				
+	outputStream = new ObjectOutputStream(new FileOutputStream("peopleTemp.dat"));
+	inputStream = new ObjectInputStream(new FileInputStream("people.dat"));
+												
+	while(true)
+	{
+		Person current = (Person)inputStream.readObject();
+		if(!current.getName().equals(nameToRemove))
+		outputStream.writeObject(current);
+	}
+	}
+				
+catch (ClassNotFoundException e) 
+{
+System.out.println("Error: person not found.");
+}
+	catch(IOException e)
+{
+																				
+} 
+																			
+				try
+				{
+outputStream = new ObjectOutputStream(new FileOutputStream("people.dat"));
+inputStream = new ObjectInputStream(new FileInputStream("peopleTemp.dat"));
+
+					while(true)
+					{		
+outputStream.writeObject((Person)inputStream.readObject());
+					}
+				}
+				catch (ClassNotFoundException e) 
+				{
+					System.out.println("Error: person not found.");
+				}
+				catch (IOException e)
+				{
+			System.out.println("Successfully removed person with specified name.");
+				} 
+				
+				System.out.println();
+				break;
+			case 3: //Displaying a person's record		
+				try
+				{
+				System.out.print("Enter name of person to read record: ");
+					String nameToDisplay = scan.nextLine();
+	inputStream = new ObjectInputStream(new FileInputStream("people.dat"));
+												while(true)
+												{
+													Person current = 						(Person)inputStream.readObject();
+													
+	if(current.getName().equals(nameToDisplay))
+														System.out.println(current.toString());
+												}	
+}
+catch (ClassNotFoundException e) 
+{
+												System.out.println(	"Error: person not found.");
+}
+											catch(IOException e)
+{
+}
+											
+											System.out.println();
+break;
+			case 4: 
+
+
+System.out.println("Enter first number of the age range: ");
+				int age1 = scan.nextInt();
+				System.out.println("Enter second number:");
+				int age2 = scan.nextInt();
+				try
+				{
+	inputStream = new ObjectInputStream(new FileInputStream("people.dat"));
+					while(true)
+					{
+Person current = (Person)inputStream.readObject();
+	Date birth = current.getBirthDate();
+      Date death = current.getDeathDate();
+						
+
+int age;
+	if(death != null)
+	{
+		age = death.getYear() – birth.getYear();
+		if(death.precedes(birth))
+		age--;
+	}
+	else
+	{
+	age = currentDate.getYear() – birth.getYear();
+	if(currentDate.precedes(birth))
+	age--;
+	}
+
+	if(age >= age1 || age <= age2)
+						
+System.out.println(current.toString());
+	}
+}
+catch (ClassNotFoundException e) 
+{
+System.out.println("Error: person not found.");
+}
+catch(IOException e)
+{
+}		
+System.out.println();
+break;
+
+case -1:
+	break;
+default:
+	System.out.println("Invalid choice.");
+	System.out.println();
+	break;
+}
+			if(inputStream != null)
+				try 
+				{
+					inputStream.close();
+				} 
+				catch (IOException e) 
+				{
+
+				}
+			if(outputStream != null)
+				try 
+				{
+					outputStream.close();
+				} 
+				catch (IOException e)
+				{
+
+				}
+		}
+		
+	}
+}
